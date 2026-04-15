@@ -1,0 +1,17 @@
+/**:
+  ros__parameters:
+    device: "/dev/ttyACM0"
+    uart1:
+      baudrate: 115200
+    config_on_startup: false
+
+    publish:
+      nav:
+        all: false
+        att: true      # Publishes Attitude (Roll/Pitch/Yaw)
+        pvt: true      # High-rate position, velocity, time
+        cov: true      # Covariance (Crucial for the EKF to trust the data)
+      esf:
+        all: false
+        meas: true     # CRITICAL: This triggers the node to publish sensor_msgs/Imu
+        raw: true
